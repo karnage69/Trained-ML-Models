@@ -92,7 +92,12 @@ plt.figure(figsize=(8, 5))
 # Scatter plot: actual vs predicted
 plt.scatter(y_test, y_pred, alpha=0.3, color='steelblue', label='Predictions')
 
-
+# Perfect prediction line (y = x diagonal)
+plt.plot(
+    [y_test.min(), y_test.max()],
+    [y_test.min(), y_test.max()],
+    color='red', linewidth=2, label='Perfect Prediction'
+)
 
 plt.xlabel("Actual House Value")
 plt.ylabel("Predicted House Value")
@@ -101,5 +106,4 @@ plt.legend()
 plt.tight_layout()
 plt.savefig("poly_regression_plot.png", dpi=150)  # saves the plot
 plt.show()
-
 print("\nPlot saved as poly_regression_plot.png")
